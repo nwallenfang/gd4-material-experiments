@@ -4,17 +4,18 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://caii1j48k4dv5"
-path="res://.godot/imported/suzanne.blend-c0eed12c290f6e3c0dbae3a86e1aa8c2.scn"
+path="res://.godot/imported/suzanne.blend-9ba4c937169d783bb486b687497af40c.scn"
 
 [deps]
 
-source_file="res://suzanne.blend"
-dest_files=["res://.godot/imported/suzanne.blend-c0eed12c290f6e3c0dbae3a86e1aa8c2.scn"]
+source_file="res://Models/suzanne.blend"
+dest_files=["res://.godot/imported/suzanne.blend-9ba4c937169d783bb486b687497af40c.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true

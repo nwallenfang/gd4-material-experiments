@@ -3,18 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfoxpyv3dc88g"
-path="res://.godot/imported/Cliffs_3_UV.gltf-d1222c4f6ed73030c5968aa0168e6967.scn"
+uid="uid://dwc7r87yoarqu"
+path="res://.godot/imported/suzanne.glb-9b2b6bfbf11fc3c4f524a96ff89b7277.scn"
 
 [deps]
 
-source_file="res://Cliffs_3_UV.gltf"
-dest_files=["res://.godot/imported/Cliffs_3_UV.gltf-d1222c4f6ed73030c5968aa0168e6967.scn"]
+source_file="res://Models/suzanne.glb"
+dest_files=["res://.godot/imported/suzanne.glb-9b2b6bfbf11fc3c4f524a96ff89b7277.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true

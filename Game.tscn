@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5nnm4a42hqgc"]
+[gd_scene load_steps=3 format=3 uid="uid://bmivb4cesy3mt"]
 
-[ext_resource type="PackedScene" uid="uid://d12ghqx7qrvgt" path="res://Level.tscn" id="2_edua3"]
-[ext_resource type="PackedScene" uid="uid://b8wh5xax4cxa" path="res://screen.blend" id="2_q44a7"]
+[ext_resource type="PackedScene" uid="uid://78nq3g3vfxv5" path="res://Levels/Level.tscn" id="2_edua3"]
+[ext_resource type="PackedScene" uid="uid://brde5fyvqed8q" path="res://Models/screen.blend" id="2_q44a7"]
 
 [node name="Game" type="Control"]
 layout_mode = 3

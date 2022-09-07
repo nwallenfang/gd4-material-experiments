@@ -3,18 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b8wh5xax4cxa"
-path="res://.godot/imported/screen.blend-52e9ffc6389ff4c86d6a90e88b31342c.scn"
+uid="uid://brde5fyvqed8q"
+path="res://.godot/imported/screen.blend-5295c9f20a1cfe1fc944920920c539ae.scn"
 
 [deps]
 
-source_file="res://screen.blend"
-dest_files=["res://.godot/imported/screen.blend-52e9ffc6389ff4c86d6a90e88b31342c.scn"]
+source_file="res://Models/screen.blend"
+dest_files=["res://.godot/imported/screen.blend-5295c9f20a1cfe1fc944920920c539ae.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true

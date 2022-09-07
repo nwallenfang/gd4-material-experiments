@@ -4,17 +4,18 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ckfy3x0pkh5xk"
-path="res://.godot/imported/Cliffs.gltf-b9a48a6182e1ba479af48d64db6bc401.scn"
+path="res://.godot/imported/Cliffs.gltf-5139212adcebe3910ae538f71ee2b467.scn"
 
 [deps]
 
-source_file="res://Cliffs.gltf"
-dest_files=["res://.godot/imported/Cliffs.gltf-b9a48a6182e1ba479af48d64db6bc401.scn"]
+source_file="res://Models/Cliffs.gltf"
+dest_files=["res://.godot/imported/Cliffs.gltf-5139212adcebe3910ae538f71ee2b467.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8788wijqg2kb"]
+[gd_scene load_steps=3 format=3 uid="uid://qkv5f4yxykmh"]
 
-[ext_resource type="PackedScene" uid="uid://dwc7r87yoarqu" path="res://suzanne.glb" id="1_b07th"]
+[ext_resource type="PackedScene" uid="uid://dwc7r87yoarqu" path="res://Models/suzanne.glb" id="1_b07th"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0225l"]
 albedo_color = Color(0.61, 0.61, 0.61, 1)

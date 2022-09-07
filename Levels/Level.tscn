@@ -1,12 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://d12ghqx7qrvgt"]
+[gd_scene load_steps=20 format=3 uid="uid://78nq3g3vfxv5"]
 
-[ext_resource type="Script" path="res://Level.gd" id="1_cawk8"]
-[ext_resource type="Environment" uid="uid://be3wfymg8u1oy" path="res://env.tres" id="2_nd0p6"]
-[ext_resource type="Material" uid="uid://cbki4lr5giwhd" path="res://Materials/CliffMaterial.tres" id="3_tkf3y"]
-[ext_resource type="Material" uid="uid://d0mfyn1g86r04" path="res://Materials/CliffMatShader.tres" id="3_wsc1d"]
-[ext_resource type="Script" path="res://HSVCliff.gd" id="5_mxs0b"]
-[ext_resource type="PackedScene" uid="uid://dv7e5iu2otygk" path="res://Player.tscn" id="6_r5x1i"]
-[ext_resource type="PackedScene" uid="uid://c8788wijqg2kb" path="res://suzanne.tscn" id="7_osbaj"]
+[ext_resource type="Script" path="res://Levels/Level.gd" id="1_00dad"]
+[ext_resource type="Environment" uid="uid://ccnlxlf1x8udm" path="res://env.tres" id="2_83gyu"]
+[ext_resource type="Material" uid="uid://d0mfyn1g86r04" path="res://Materials/CliffMatShader.tres" id="3_dldp1"]
+[ext_resource type="Material" uid="uid://cbki4lr5giwhd" path="res://Materials/CliffMaterial.tres" id="4_oog3b"]
+[ext_resource type="Script" path="res://Objects/HSVCliff.gd" id="5_80dp7"]
+[ext_resource type="PackedScene" uid="uid://c4g2gtfrjlmtd" path="res://Actors/Player.tscn" id="6_hpl7r"]
+[ext_resource type="PackedScene" uid="uid://qkv5f4yxykmh" path="res://Objects/suzanne.tscn" id="7_2yvrt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e534a"]
 
@@ -108,15 +108,15 @@ shadow_mesh = SubResource("ArrayMesh_ctntp")
 albedo_color = Color(0.87, 0.7656, 0.696, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_axhv7"]
-material = ExtResource("3_tkf3y")
+material = ExtResource("4_oog3b")
 
 [sub_resource type="BoxMesh" id="BoxMesh_x3jrm"]
 
 [node name="Level" type="Node3D"]
-script = ExtResource("1_cawk8")
+script = ExtResource("1_00dad")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_nd0p6")
+environment = ExtResource("2_83gyu")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.199727, -0.581918, 0.78834, -0.0610629, 0.810379, 0.582716, -0.977947, 0.0682457, -0.197388, 6.73652, 6.52044, -1.27781)
@@ -149,25 +149,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51524, 0.229942, -5.48085)
 transform = Transform3D(0.650734, 0, -0.759305, 0, 1, 0, 0.759305, 0, 0.650734, 9.09545, 0.282606, 9.17014)
 mesh = SubResource("ArrayMesh_1x11k")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_wsc1d")
+surface_material_override/0 = ExtResource("3_dldp1")
 
 [node name="Cliff5" type="MeshInstance3D" parent="Geometry/Cliffs"]
 transform = Transform3D(-0.959057, 0, -0.283212, 0, 1, 0, 0.283212, 0, -0.959057, -0.474476, 0.282606, 16.2318)
 mesh = SubResource("ArrayMesh_1x11k")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_wsc1d")
+surface_material_override/0 = ExtResource("3_dldp1")
 
 [node name="Cliff2" type="MeshInstance3D" parent="Geometry/Cliffs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00532532, 0.335525, -4.32552)
 mesh = SubResource("ArrayMesh_w40j7")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_wsc1d")
+surface_material_override/0 = ExtResource("3_dldp1")
 
 [node name="Cliff3" type="MeshInstance3D" parent="Geometry/Cliffs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00532532, 0.270058, -4.32552)
 mesh = SubResource("ArrayMesh_yqg21")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_wsc1d")
+surface_material_override/0 = ExtResource("3_dldp1")
 
 [node name="Floor" type="CSGBox3D" parent="Geometry"]
 use_collision = true
@@ -176,26 +176,26 @@ material = SubResource("StandardMaterial3D_5tuvx")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38862, 1, 0)
-material_override = ExtResource("3_wsc1d")
+material_override = ExtResource("3_dldp1")
 mesh = SubResource("SphereMesh_axhv7")
 
 [node name="HSVCliff" type="Node3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -25.1242, 0.512548, -10.7302)
-script = ExtResource("5_mxs0b")
+script = ExtResource("5_80dp7")
 gradient_start = Color(0.270573, 0.28125, 0.160321, 1)
 gradient_end = Color(0.34, 0.146094, 0.146094, 1)
 
 [node name="Cliff1" type="MeshInstance3D" parent="HSVCliff"]
 mesh = SubResource("ArrayMesh_1x11k")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("3_wsc1d")
+surface_material_override/0 = ExtResource("3_dldp1")
 
-[node name="Player" parent="." instance=ExtResource("6_r5x1i")]
+[node name="Player" parent="." instance=ExtResource("6_hpl7r")]
 
-[node name="suzanne" parent="." instance=ExtResource("7_osbaj")]
+[node name="suzanne" parent="." instance=ExtResource("7_2yvrt")]
 transform = Transform3D(-0.213048, 0.294391, 0.931636, 0.0656276, 0.955685, -0.286982, -0.974835, 0, -0.222927, -28.4605, 2.95169, 3.60118)
 
-[node name="suzanne2" parent="." instance=ExtResource("7_osbaj")]
+[node name="suzanne2" parent="." instance=ExtResource("7_2yvrt")]
 transform = Transform3D(-0.599196, 0.26772, 0.754514, 0.0656276, 0.955685, -0.286982, -0.797908, -0.122442, -0.590212, -28.2693, 2.95169, 6.84228)
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]

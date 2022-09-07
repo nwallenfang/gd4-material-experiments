@@ -3,18 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dj5fecehuixue"
-path="res://.godot/imported/Cliffs_2_UV.gltf-36b563e9026c9eaec805d4c165c68076.scn"
+uid="uid://edfhd387w7r8"
+path="res://.godot/imported/Cliffs_1_UV.gltf-2a2c4157eaca3376759212c7f5cf60ee.scn"
 
 [deps]
 
-source_file="res://Cliffs_2_UV.gltf"
-dest_files=["res://.godot/imported/Cliffs_2_UV.gltf-36b563e9026c9eaec805d4c165c68076.scn"]
+source_file="res://Models/Cliffs_1_UV.gltf"
+dest_files=["res://.godot/imported/Cliffs_1_UV.gltf-2a2c4157eaca3376759212c7f5cf60ee.scn"]
 
 [params]
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true

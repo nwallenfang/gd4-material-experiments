@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv7e5iu2otygk"]
+[gd_scene load_steps=3 format=3 uid="uid://c4g2gtfrjlmtd"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_x4ng2"]
+[ext_resource type="Script" path="res://Actors/Player.gd" id="1_v31qw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0wf0k"]
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_x4ng2")
+script = ExtResource("1_v31qw")
 accel_default = 350
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

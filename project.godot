@@ -12,7 +12,7 @@ _global_script_classes=[{
 "base": "CharacterBody3D",
 "class": &"PhysicsMover3D",
 "language": &"GDScript",
-"path": "res://PhysicsMover3D.gd"
+"path": "res://Actors/PhysicsMover3D.gd"
 }]
 _global_script_class_icons={
 "PhysicsMover3D": ""
