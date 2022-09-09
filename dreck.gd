@@ -10,18 +10,21 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var cam1 := true
+#var cam1 := true
 func _process(delta):
+	RenderingServer.global_shader_parameter_set("main_cam", %cam1.global_transform.origin)
+	%cam2.global_transform = %cam1.global_transform
+	%cam2.global_transform.origin += Vector3.UP * .01
 	$UI/Control/FPS.text = str(Engine.get_frames_per_second())
-	var viewport1 : SubViewport = $HBoxContainer/SubViewportContainer/SubViewport as SubViewport
-	var viewport2 : SubViewport = $HBoxContainer/SubViewportContainer2/SubViewport as SubViewport
-	if cam1:
-		viewport1.render_target_update_mode = SubViewport.UPDATE_ONCE
-		RenderingServer.global_shader_parameter_set("other_cam", false)
-	else:
-		viewport2.render_target_update_mode = SubViewport.UPDATE_ONCE
-		RenderingServer.global_shader_parameter_set("other_cam", true)
-	cam1 = not cam1
+#	var viewport1 : SubViewport = $HBoxContainer/SubViewportContainer/SubViewport as SubViewport
+#	var viewport2 : SubViewport = $HBoxContainer/SubViewportContainer2/SubViewport as SubViewport
+#	if cam1:
+#		viewport1.render_target_update_mode = SubViewport.UPDATE_ONCE
+#		RenderingServer.global_shader_parameter_set("other_cam", false)
+#	else:
+#		viewport2.render_target_update_mode = SubViewport.UPDATE_ONCE
+#		RenderingServer.global_shader_parameter_set("other_cam", true)
+#	cam1 = not cam1
 #	$UI/Control/FPS.text = str(Engine.get_frames_per_second())
 #	RenderingServer.global_shader_parameter_set("other_cam", false)
 #	RenderingServer.force_draw()

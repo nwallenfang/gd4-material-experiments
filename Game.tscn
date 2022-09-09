@@ -1,7 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmivb4cesy3mt"]
+[gd_scene load_steps=6 format=3 uid="uid://bmivb4cesy3mt"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_v60es"]
 [ext_resource type="PackedScene" uid="uid://78nq3g3vfxv5" path="res://Levels/Level.tscn" id="2_edua3"]
+
+[sub_resource type="Shader" id="Shader_v8ptr"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.0.alpha16's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+uniform sampler2D edges;
+
+void fragment() {
+//	if (sin(TIME) > .0) {
+//		COLOR = texture(edges, UV);
+//	}
+	COLOR = mix(COLOR, texture(edges, UV), .5);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypq6r"]
+shader = SubResource("Shader_v8ptr")
 
 [sub_resource type="Environment" id="Environment_ylcxl"]
 
@@ -15,6 +32,8 @@ grow_vertical = 2
 script = ExtResource("1_v60es")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_ypq6r")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,16 +52,26 @@ render_target_update_mode = 4
 [node name="WorldEnvironment" parent="SubViewportContainer/SubViewport/MaterialTest" index="0"]
 environment = SubResource("Environment_ylcxl")
 
+[node name="FPS" parent="SubViewportContainer/SubViewport/MaterialTest/UI/Control" index="0"]
+layout_mode = 0
+
 [node name="Cliff4" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="0"]
+transform = Transform3D(0.650734, 0, -0.759305, 0, 1, 0, 0.759305, 0, 0.650734, 35.4373, 0.282608, 10.9129)
 surface_material_override/0 = null
 
 [node name="Cliff5" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="1"]
+transform = Transform3D(-0.959057, 0, -0.283212, 0, 1, 0, 0.283212, 0, -0.959057, 17.6969, 0.282606, 21.8161)
 surface_material_override/0 = null
 
-[node name="Cliff2" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="2"]
+[node name="Cliff6" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="2"]
+transform = Transform3D(-0.959057, 0, -0.283212, 0, 1, 0, 0.283212, 0, -0.959057, -8.4971, 0.282606, -4.51749)
+
+[node name="Cliff2" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7881, 0.335527, -0.121091)
 surface_material_override/0 = null
 
-[node name="Cliff3" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="3"]
+[node name="Cliff3" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5572, 0.270058, -7.22917)
 surface_material_override/0 = null
 
 [node name="Cliff1" parent="SubViewportContainer/SubViewport/MaterialTest/HSVCliff" index="0"]

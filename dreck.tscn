@@ -1,70 +1,101 @@
-[gd_scene load_steps=6 format=3 uid="uid://dolqky1wcn3nw"]
+[gd_scene load_steps=15 format=3 uid="uid://dolqky1wcn3nw"]
 
 [ext_resource type="Script" path="res://dreck.gd" id="1_hy3l3"]
+[ext_resource type="Material" uid="uid://5lx8qxhqx73q" path="res://dreckmaterial.tres" id="2_qodgw"]
 
-[sub_resource type="Shader" id="Shader_5pbi2"]
-code = "// NOTE: Shader automatically converted from Godot Engine 4.0.alpha16's StandardMaterial3D.
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_lm4ck"]
 
-shader_type spatial;
-render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
-uniform float point_size : hint_range(0,128);
-uniform float roughness : hint_range(0,1);
-uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
-uniform vec4 metallic_texture_channel;
-uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
-uniform float specular;
-uniform float metallic;
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
-global uniform bool other_cam;
+[sub_resource type="Sky" id="Sky_nf2cq"]
+sky_material = SubResource("PhysicalSkyMaterial_lm4ck")
 
-void vertex() {
-	UV=UV*uv1_scale.xy+uv1_offset.xy;
-}
-
-
-
-
-
-
-void fragment() {
-	vec2 base_uv = UV;
-	vec4 albedo_tex = texture(texture_albedo,base_uv);
-	ALBEDO = albedo.rgb * albedo_tex.rgb;
-	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
-	METALLIC = metallic_tex * metallic;
-	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);
-	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
-	ROUGHNESS = roughness_tex * roughness;
-	SPECULAR = specular;
-	
-	if (other_cam) {
-		ALBEDO = vec3(0.2);
-	}
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ab2m6"]
-render_priority = 0
-shader = SubResource("Shader_5pbi2")
-albedo = Color(1, 1, 1, 1)
-metallic = 0.0
-metallic_texture_channel = Plane(1, 0, 0, 0)
-point_size = 1.0
-roughness = 1.0
-specular = 0.5
-uv1_offset = Vector3(0, 0, 0)
-uv1_scale = Vector3(1, 1, 1)
-uv2_offset = Vector3(0, 0, 0)
-uv2_scale = Vector3(1, 1, 1)
+[sub_resource type="Environment" id="Environment_q2a20"]
+background_mode = 2
+sky = SubResource("Sky_nf2cq")
+ambient_light_color = Color(0.788235, 0.772549, 0.784314, 1)
+ambient_light_energy = 3.94
 
 [sub_resource type="PrismMesh" id="PrismMesh_qyeqk"]
 
-[sub_resource type="Environment" id="Environment_q2a20"]
+[sub_resource type="CameraTexture" id="CameraTexture_bvkad"]
+
+[sub_resource type="Shader" id="Shader_ntd3b"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.0.alpha16's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D mist;
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hafd7"]
+shader = SubResource("Shader_ntd3b")
+mist = SubResource("CameraTexture_bvkad")
+
+[sub_resource type="Animation" id="Animation_po18x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/SubViewportContainer/SubViewport/cam1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.16798, 0.156922, -1.64053)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/SubViewportContainer/SubViewport/cam1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.369661, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e4eaq"]
+resource_name = "cam"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/SubViewportContainer/SubViewport/cam1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.00343, 0.156922, 2.01829), Vector3(-2.16798, 0.156922, -1.64053), Vector3(-1.00343, 0.156922, 2.01829)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/SubViewportContainer/SubViewport/cam1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.369661, 0), Vector3(0, -1.91594, 0), Vector3(0, -0.369661, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddaem"]
+_data = {
+"RESET": SubResource("Animation_po18x"),
+"cam": SubResource("Animation_e4eaq")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwo04"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5bpuu"]
 
 [node name="Dreck" type="Control"]
 layout_mode = 3
@@ -75,13 +106,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hy3l3")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q2a20")
+
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186116, 0)
-material_override = SubResource("ShaderMaterial_ab2m6")
+material_override = ExtResource("2_qodgw")
 mesh = SubResource("PrismMesh_qyeqk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,25 +122,24 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
-layout_mode = 2
+material = SubResource("ShaderMaterial_hafd7")
 offset_right = 574.0
 offset_bottom = 648.0
 size_flags_horizontal = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
-transparent_bg = true
 handle_input_locally = false
 screen_space_aa = 1
 size = Vector2i(574, 648)
 render_target_update_mode = 4
 
-[node name="Camera3d" type="Camera3D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
-transform = Transform3D(0.93245, 0, -0.361299, 0, 1, 0, 0.361299, 0, 0.93245, -1.00343, 0.156922, 2.01829)
+[node name="cam1" type="Camera3D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(0.93245, 0, -0.361299, 0, 1, 0, 0.361299, 0, 0.93245, -2.16798, 0.156922, -1.64053)
 current = true
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
-layout_mode = 2
 offset_left = 578.0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -119,15 +151,13 @@ handle_input_locally = false
 size = Vector2i(574, 648)
 render_target_update_mode = 4
 
-[node name="Camera3d2" type="Camera3D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+[node name="cam2" type="Camera3D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+unique_name_in_owner = true
 transform = Transform3D(0.93245, 0, -0.361299, 0, 1, 0, 0.361299, 0, 0.93245, -1.00343, 0.156922, 2.01829)
 current = true
 
 [node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.565687, 0.82462, 0, -0.82462, 0.565687, 0, 0, 2.91244)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_q2a20")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -140,6 +170,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FPS" type="Label" parent="UI/Control"]
-layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "cam"
+libraries = {
+"": SubResource("AnimationLibrary_ddaem")
+}
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.356353, 0, 0, 0, 0.356353, 0, 0, 0, 0.356353, -0.638805, -1.19209e-07, 0.00303411)
+material_override = SubResource("StandardMaterial3D_fwo04")
+mesh = SubResource("BoxMesh_5bpuu")
