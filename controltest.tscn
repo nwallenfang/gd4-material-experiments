@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2di712elltcu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_txvji"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ib8tv"]
+mie_coefficient = 0.055
+mie_eccentricity = 0.2
+
+[sub_resource type="Sky" id="Sky_r507b"]
+sky_material = SubResource("PhysicalSkyMaterial_ib8tv")
+
+[sub_resource type="Environment" id="Environment_553va"]
+background_mode = 2
+sky = SubResource("Sky_r507b")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3d" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+current = true
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.38566)
+mesh = SubResource("BoxMesh_txvji")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_553va")
+
+[node name="OmniLight3d" type="OmniLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.841684, 0, -0.939428)
