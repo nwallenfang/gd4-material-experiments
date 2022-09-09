@@ -8,6 +8,10 @@ render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlic
 uniform vec4 gradient_start : source_color;
 uniform vec4 gradient_end : source_color;
 
+uniform float hue: hint_range(0.0, 1.0, 0.01);
+uniform float saturation: hint_range(0.0, 1.0, 0.01);
+uniform float value: hint_range(0.0, 1.0, 0.1);
+
 
 uniform float desaturation_scaling = 10.0;
 
@@ -30,18 +34,21 @@ vec3 hsv2rgb(vec3 c)
     return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
 }
 
-varying vec3 hsv;
+//varying vec3 hsv;
 varying vec3 pos;
 
 void vertex() {
-	hsv = rgb2hsv(gradient_start.rgb);
+//	hsv = rgb2hsv(gradient_start.rgb);
 	pos = VERTEX;
 }
 
 void fragment() {
-	vec3 hue_change = hsv;
-//	hue_change.x = gradient_base + pos.y * gra;
-	vec3 rgb = hsv2rgb(hue_change);
+	vec3 hue_change = gradient_start.rgb + 0.07 * sin(6.0 * pos.y);
+	
+	vec3 final_hsv = mix(gradient_start.rgb, gradient_end.rgb, pos.y);
+//	hue_change.x = gradient_base + pos.yq * gra;ffff
+	vec3 rgb = hsv2rgb(final_hsv);
+//	vec3 rgb = vec3(pos.y / 1.0);
 	ALBEDO = rgb;
 }
 "
@@ -50,5 +57,8 @@ void fragment() {
 render_priority = 0
 shader = SubResource("Shader_7s05p")
 desaturation_scaling = null
-gradient_end = null
-gradient_start = Vector3(0.181382, 0.429971, 0.28125)
+gradient_end = Vector3(0.0201465, 0.517045, 0.690196)
+gradient_start = Vector3(0.547893, 0.467743, 0.729412)
+hue = 0.4
+saturation = 0.6
+value = 1.0

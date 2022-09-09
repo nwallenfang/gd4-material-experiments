@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://55ov271h55jv"]
+[gd_scene load_steps=8 format=3 uid="uid://55ov271h55jv"]
 
 [ext_resource type="Script" path="res://Objects/HSVCliff.gd" id="1_jpe2l"]
 [ext_resource type="Material" uid="uid://d0mfyn1g86r04" path="res://Materials/CliffMatShader.tres" id="2_q66nu"]
@@ -35,13 +35,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cavm5")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_py8ur"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_e2jmx"]
+material = SubResource("StandardMaterial3D_py8ur")
+
 [node name="HSVCliff" type="Node3D"]
-transform = Transform3D(-0.706215, 0.0337251, -0.706215, -0.0238552, -0.998752, -0.0238552, -0.707107, 0, 0.707107, -25.1242, 0.512548, -10.7302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.211762, 0)
 script = ExtResource("1_jpe2l")
-gradient_start = Color(0.490196, 0.729412, 0.709804, 1)
-gradient_end = Color(0.34, 0.146094, 0.146094, 1)
+gradient_start = Color(0.368627, 0.729412, 0.196078, 1)
+gradient_end = Color(0.690196, 0.376471, 0.333333, 1)
 
 [node name="Cliff1" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_1x11k")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_q66nu")
+
+[node name="Cliff2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.99385, 0.431726)
+mesh = SubResource("SphereMesh_e2jmx")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_q66nu")

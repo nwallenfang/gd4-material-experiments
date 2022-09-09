@@ -36,13 +36,10 @@ environment = SubResource("Environment_ylcxl")
 [node name="Cliff4" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="0"]
 surface_material_override/0 = null
 
-[node name="Cliff5" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="1"]
+[node name="Cliff2" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="1"]
 surface_material_override/0 = null
 
-[node name="Cliff2" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="2"]
-surface_material_override/0 = null
-
-[node name="Cliff3" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="3"]
+[node name="Cliff3" parent="SubViewportContainer/SubViewport/MaterialTest/Geometry/Cliffs" index="2"]
 surface_material_override/0 = null
 
 [node name="Cliff1" parent="SubViewportContainer/SubViewport/MaterialTest/HSVCliff" index="0"]

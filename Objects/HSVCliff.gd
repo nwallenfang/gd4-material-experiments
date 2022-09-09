@@ -21,13 +21,15 @@ var gradient_start_hsv: Vector3
 var gradient_end_hsv: Vector3
 
 func col_to_hsv(col: Color) -> Vector3:
-	return Vector3(col.h, col.s, col.v)
+	var hsv: Vector3 = Vector3(col.h, col.s, col.v)
+	print("hsv: ", hsv)
+	return hsv
 
 func set_gradient_shader(name: String, val: Vector3):
 	if is_instance_valid(self):
 		if has_node("Cliff1") and is_instance_valid(get_node("Cliff1")):
 			var mat: ShaderMaterial = $Cliff1.get_surface_override_material(0)
-			mat.set_shader_uniform(name, val)
+			mat.set_shader_parameter(name, val)
 	else:
 		print("Cliff is null")
 
