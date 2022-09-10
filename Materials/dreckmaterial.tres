@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://5lx8qxhqx73q"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bxc6vixqeljry"]
 
-[ext_resource type="Texture2D" uid="uid://dgsw4f36ltiw7" path="res://ArtStyleEdge.png" id="1_rcqvw"]
+[ext_resource type="Texture2D" path="res://Materials/ArtStyleEdge.png" id="1_rcqvw"]
 
 [sub_resource type="Shader" id="Shader_5pbi2"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.alpha16's StandardMaterial3D.

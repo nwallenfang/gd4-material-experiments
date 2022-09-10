@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cur5hmm84jgin"]
+[gd_scene load_steps=2 format=3 uid="uid://bswlhtsxvm5a2"]
 
-[ext_resource type="PackedScene" uid="uid://coh237cvtmp0e" path="res://sub_viewport_hacked.tscn" id="1_3b064"]
+[ext_resource type="PackedScene" path="res://Levels/sub_viewport_hacked.tscn" id="1_3b064"]
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
 anchors_preset = 15

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgsw4f36ltiw7"
-path.s3tc="res://.godot/imported/ArtStyleEdge.png-8d743f10b824195e891b02b298748c2f.s3tc.ctex"
-path.etc2="res://.godot/imported/ArtStyleEdge.png-8d743f10b824195e891b02b298748c2f.etc2.ctex"
+path.s3tc="res://.godot/imported/ArtStyleEdge.png-3e213cbd50cf1fe661531bd5b19191f5.s3tc.ctex"
+path.etc2="res://.godot/imported/ArtStyleEdge.png-3e213cbd50cf1fe661531bd5b19191f5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ArtStyleEdge.png"
-dest_files=["res://.godot/imported/ArtStyleEdge.png-8d743f10b824195e891b02b298748c2f.s3tc.ctex", "res://.godot/imported/ArtStyleEdge.png-8d743f10b824195e891b02b298748c2f.etc2.ctex"]
+source_file="res://Materials/ArtStyleEdge.png"
+dest_files=["res://.godot/imported/ArtStyleEdge.png-3e213cbd50cf1fe661531bd5b19191f5.s3tc.ctex", "res://.godot/imported/ArtStyleEdge.png-3e213cbd50cf1fe661531bd5b19191f5.etc2.ctex"]
 
 [params]
 

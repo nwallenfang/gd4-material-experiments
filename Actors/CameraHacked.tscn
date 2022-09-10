@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddwpfw60rpahb"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://CameraHacked.gd" id="1_moyo3"]
+[ext_resource type="Script" path="res://Actors/CameraHacked.gd" id="1_moyo3"]
 
 [node name="Camera" type="Camera3D"]
 current = true

@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dolqky1wcn3nw"]
+[gd_scene load_steps=15 format=3 uid="uid://1u14dhyydc7y"]
 
-[ext_resource type="Script" path="res://dreck.gd" id="1_hy3l3"]
-[ext_resource type="Material" uid="uid://5lx8qxhqx73q" path="res://dreckmaterial.tres" id="2_qodgw"]
+[ext_resource type="Script" path="res://Levels/dreck.gd" id="1_vpr8o"]
+[ext_resource type="Material" path="res://Materials/dreckmaterial.tres" id="2_d3r0k"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_lm4ck"]
 
@@ -104,17 +104,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hy3l3")
+script = ExtResource("1_vpr8o")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_q2a20")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186116, 0)
-material_override = ExtResource("2_qodgw")
+material_override = ExtResource("2_d3r0k")
 mesh = SubResource("PrismMesh_qyeqk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -123,6 +124,7 @@ grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
 material = SubResource("ShaderMaterial_hafd7")
+layout_mode = 2
 offset_right = 574.0
 offset_bottom = 648.0
 size_flags_horizontal = 3
@@ -140,6 +142,7 @@ transform = Transform3D(0.93245, 0, -0.361299, 0, 1, 0, 0.361299, 0, 0.93245, -2
 current = true
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
 offset_left = 578.0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -170,6 +173,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FPS" type="Label" parent="UI/Control"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 

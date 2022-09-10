@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://78nq3g3vfxv5"]
+[gd_scene load_steps=22 format=3]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_00dad"]
-[ext_resource type="Environment" uid="uid://ccnlxlf1x8udm" path="res://env.tres" id="2_83gyu"]
+[ext_resource type="Environment" uid="uid://te4oqnhb7yla" path="res://env.tres" id="2_83gyu"]
 [ext_resource type="Material" uid="uid://d0mfyn1g86r04" path="res://Materials/CliffMatShader.tres" id="3_dldp1"]
-[ext_resource type="Material" uid="uid://5lx8qxhqx73q" path="res://dreckmaterial.tres" id="4_breqw"]
+[ext_resource type="Material" path="res://Materials/dreckmaterial.tres" id="4_breqw"]
 [ext_resource type="Material" uid="uid://cbki4lr5giwhd" path="res://Materials/CliffMaterial.tres" id="4_oog3b"]
 [ext_resource type="Script" path="res://Objects/HSVCliff.gd" id="5_80dp7"]
 [ext_resource type="PackedScene" uid="uid://c4g2gtfrjlmtd" path="res://Actors/Player.tscn" id="6_hpl7r"]

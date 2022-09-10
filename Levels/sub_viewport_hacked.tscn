@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://coh237cvtmp0e"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://sub_viewport_hacked.gd" id="1_t8ngu"]
+[ext_resource type="Script" path="res://Levels/sub_viewport_hacked.gd" id="1_t8ngu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dsqlp"]
 
