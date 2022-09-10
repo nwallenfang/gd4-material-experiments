@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://coh237cvtmp0e"]
+
+[ext_resource type="Script" path="res://sub_viewport_hacked.gd" id="1_t8ngu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dsqlp"]
+
+[node name="SubViewport" type="SubViewport"]
+render_target_update_mode = 4
+script = ExtResource("1_t8ngu")
+
+[node name="cam2" type="Camera3D" parent="."]
+unique_name_in_owner = true
+current = true
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.50919)
+mesh = SubResource("BoxMesh_dsqlp")
