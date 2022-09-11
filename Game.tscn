@@ -1,20 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmivb4cesy3mt"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_v60es"]
-[ext_resource type="PackedScene" uid="uid://78nq3g3vfxv5" path="res://Levels/Level.tscn" id="2_edua3"]
+[ext_resource type="PackedScene" uid="uid://ceptlqfo2p223" path="res://Levels/Level.tscn" id="2_edua3"]
 
 [sub_resource type="Shader" id="Shader_v8ptr"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.0.alpha16's CanvasItemMaterial.
 
 shader_type canvas_item;
-render_mode blend_mix;
 uniform sampler2D edges;
 
 void fragment() {
 //	if (sin(TIME) > .0) {
 //		COLOR = texture(edges, UV);
 //	}
-	COLOR = mix(COLOR, texture(edges, UV), .5);
+//	COLOR = mix(COLOR, texture(edges, UV), .5);
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ypq6r"]

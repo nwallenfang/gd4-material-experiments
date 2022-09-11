@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=3 uid="uid://ceiwdajd5uyw"]
+
+[ext_resource type="PackedScene" uid="uid://mww2tgwuvu1c" path="res://Models/rig_nils.fbx" id="1_g7j67"]
+[ext_resource type="Texture2D" uid="uid://cvml0yo2hb64q" path="res://icon.svg" id="2_3bk7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28o03"]
+albedo_color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3vir5"]
+frequency = 0.024
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cq4vw"]
+seamless = true
+noise = SubResource("FastNoiseLite_3vir5")
+
+[sub_resource type="Shader" id="Shader_dxhbe"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.0.alpha16's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
+uniform sampler2D noise: repeat_enable;
+
+
+void vertex() {
+//	UV=UV*uv1_scale.xy+uv1_offset.xy;
+}
+
+
+
+
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo_tex.rgb;
+}
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wdf4c"]
+viewport_path = NodePath("CalmWorld/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vahuq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_dxhbe")
+noise = SubResource("NoiseTexture2D_cq4vw")
+texture_albedo = SubResource("ViewportTexture_wdf4c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmr4j"]
+resource_local_to_scene = true
+albedo_color = Color(0.141176, 0.0509804, 0.678431, 1)
+
+[node name="rig_nils" instance=ExtResource("1_g7j67")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="RootNode/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.0358957, 0.0338985, 0.00455181, 0.99877)
+bones/2/rotation = Quaternion(0.0256962, 0.0273819, -0.011313, 0.999231)
+bones/3/rotation = Quaternion(0.0379799, 0.0271208, -0.0128886, 0.998827)
+bones/4/rotation = Quaternion(-0.0827823, -0.0052275, 0.00750622, 0.996526)
+bones/5/rotation = Quaternion(0.123, 0, 0.032, 0.983)
+bones/7/rotation = Quaternion(0.53927, -0.532549, 0.55316, 0.345823)
+bones/8/rotation = Quaternion(0.345255, -0.276381, -0.411853, 0.796737)
+bones/9/rotation = Quaternion(1.73254e-08, 8.08518e-08, -0.252542, 0.967586)
+bones/10/rotation = Quaternion(-0.0207949, 0.282592, -0.00147374, 0.959014)
+bones/31/rotation = Quaternion(-0.500533, -0.556346, 0.560502, -0.35466)
+bones/32/rotation = Quaternion(0.327325, 0.375357, 0.413372, 0.762292)
+bones/33/rotation = Quaternion(5.7861e-07, -4.67611e-08, 0.167502, 0.985872)
+bones/34/rotation = Quaternion(0.048445, -0.398653, 0.137872, 0.905384)
+bones/55/rotation = Quaternion(-0.180197, 0.123117, 0.975342, -0.0328532)
+bones/56/rotation = Quaternion(-0.243288, -0.0680504, -0.0193559, 0.96737)
+bones/57/rotation = Quaternion(0.593968, -0.00683519, -0.0145573, 0.804328)
+bones/60/rotation = Quaternion(0.162696, 0.294134, 0.941707, -0.0142556)
+bones/61/rotation = Quaternion(-0.463572, 0.0373427, 0.0719646, 0.882342)
+bones/62/rotation = Quaternion(0.475087, -0.0284358, -0.0567056, 0.877649)
+bones/63/rotation = Quaternion(0.335241, 4.75111e-08, -1.24925e-07, 0.942132)
+
+[node name="BoneAttachment3D" parent="RootNode/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.995297, -0.0386578, 0.0888108, 0.0577485, 0.972951, -0.223675, -0.0777617, 0.227752, 0.970609, -0.0629347, 1.76499, 0.136412)
+bone_idx = 6
+
+[node name="BoneAttachment3D2" parent="RootNode/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.500544, 0.307671, 0.809192, 0.367863, -0.921721, 0.122907, 0.783665, 0.236151, -0.574543, -0.209223, 0.800385, 0.141064)
+bone_idx = 14
+
+[node name="BoneAttachment3D3" parent="RootNode/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.465369, 0.430404, 0.773423, 0.366891, -0.889006, 0.273966, 0.805494, 0.156266, -0.571627, -0.221941, 0.743306, 0.163775)
+bone_idx = 18
+
+[node name="BoneAttachment3D4" parent="RootNode/Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.465551, 0.430325, 0.773356, 0.36679, -0.889066, 0.273907, 0.805435, 0.156142, -0.571745, -0.23527, 0.728259, 0.15054)
+bone_idx = 22
+
+[node name="BoneAttachment3D5" parent="RootNode/Armature/Skeleton3D" index="4"]
+transform = Transform3D(0.465929, 0.43123, 0.772625, 0.368936, -0.888354, 0.273336, 0.804235, 0.157694, -0.573006, -0.246011, 0.730546, 0.132173)
+bone_idx = 26
+
+[node name="BoneAttachment3D6" parent="RootNode/Armature/Skeleton3D" index="5"]
+transform = Transform3D(0.464381, 0.430521, 0.773951, 0.366809, -0.888913, 0.27438, 0.806102, 0.156475, -0.570714, -0.256428, 0.740974, 0.108744)
+bone_idx = 30
+
+[node name="BoneAttachment3D7" parent="RootNode/Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.222062, -0.382131, -0.89703, -0.304328, -0.901203, 0.308572, -0.926322, 0.204469, -0.316416, 0.138621, 0.789552, 0.0124845)
+bone_idx = 38
+
+[node name="BoneAttachment3D8" parent="RootNode/Armature/Skeleton3D" index="7"]
+transform = Transform3D(0.159769, -0.523595, -0.836851, -0.324577, -0.82847, 0.456384, -0.932267, 0.198707, -0.302311, 0.146768, 0.728785, 0.0260611)
+bone_idx = 42
+
+[node name="BoneAttachment3D9" parent="RootNode/Armature/Skeleton3D" index="8"]
+transform = Transform3D(0.158644, -0.523609, -0.837057, -0.324053, -0.828443, 0.456805, -0.932642, 0.198781, -0.301105, 0.15315, 0.713762, 0.00836421)
+bone_idx = 46
+
+[node name="BoneAttachment3D10" parent="RootNode/Armature/Skeleton3D" index="9"]
+transform = Transform3D(0.161196, -0.523604, -0.836572, -0.325419, -0.828451, 0.455818, -0.931728, 0.19876, -0.303934, 0.159192, 0.718381, -0.0126029)
+bone_idx = 50
+
+[node name="BoneAttachment3D11" parent="RootNode/Armature/Skeleton3D" index="10"]
+transform = Transform3D(0.159386, -0.523507, -0.83698, -0.323737, -0.828653, 0.45665, -0.932625, 0.198178, -0.301554, 0.164887, 0.727635, -0.0388327)
+bone_idx = 54
+
+[node name="BoneAttachment3D12" parent="RootNode/Armature/Skeleton3D" index="11"]
+transform = Transform3D(-0.954398, -0.296669, -0.0333316, -0.0500588, 0.0489647, 0.997544, -0.294309, 0.953723, -0.0615825, -0.133975, 0.0272239, 0.0335677)
+bone_idx = 59
+
+[node name="BoneAttachment3D13" parent="RootNode/Armature/Skeleton3D" index="12"]
+transform = Transform3D(-0.972967, 0.206941, 0.102516, 0.0262007, -0.342124, 0.939289, 0.229451, 0.916584, 0.327453, 0.0988688, 0.0289225, 0.0777225)
+bone_idx = 64
+
+[node name="Beta_Surface" parent="RootNode/Armature/Skeleton3D" index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_28o03")
+surface_material_override/1 = SubResource("ShaderMaterial_vahuq")
+surface_material_override/2 = SubResource("StandardMaterial3D_gmr4j")
+
+[node name="CalmWorld" type="Node2D" parent="." index="2"]
+
+[node name="SubViewport" type="SubViewport" parent="CalmWorld" index="0"]
+disable_3d = true
+
+[node name="Node2d" type="Node2D" parent="CalmWorld/SubViewport" index="0"]
+
+[node name="Camera2d" type="Camera2D" parent="CalmWorld/SubViewport/Node2d" index="0"]
+current = true
+
+[node name="Sprite" type="Sprite2D" parent="CalmWorld/SubViewport/Node2d" index="1"]
+position = Vector2(10, 10)
+texture = ExtResource("2_3bk7m")
+
+[node name="Node2d" type="Node2D" parent="CalmWorld" index="1"]

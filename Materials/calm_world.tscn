@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://crevtw2toujo1"]
+
+[ext_resource type="Texture2D" uid="uid://cvml0yo2hb64q" path="res://icon.svg" id="1_ue07c"]
+
+[node name="CalmWorld" type="Node2D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+
+[node name="Node2d" type="Node2D" parent="SubViewport"]
+
+[node name="Camera2d" type="Camera2D" parent="SubViewport/Node2d"]
+current = true
+
+[node name="Sprite" type="Sprite2D" parent="SubViewport/Node2d"]
+position = Vector2(10, 10)
+texture = ExtResource("1_ue07c")
+
+[node name="Node2d" type="Node2D" parent="."]

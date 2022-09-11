@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://qq58p7u5vdkd"]
+
+[ext_resource type="PackedScene" uid="uid://dhh1iyevjk0ag" path="res://Models/Shoved Reaction With Spin.fbx" id="1_bj5cq"]
+[ext_resource type="Script" path="res://Actors/Humanoid.gd" id="2_ofa74"]
+
+[node name="Humanoid" instance=ExtResource("1_bj5cq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("2_ofa74")
+
+[node name="GeneralSkeleton" parent="RootNode" index="0"]
+bones/0/position = Vector3(-7.72729e-08, 1.04275, 0.0155432)
+bones/0/rotation = Quaternion(-4.65661e-10, 0, 0, 1)
+bones/1/rotation = Quaternion(-3.25963e-09, -3.46973e-15, -1.28596e-14, 1)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/3/rotation = Quaternion(-7.45058e-09, 0, -2.84356e-14, 1)
+bones/7/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+bones/8/rotation = Quaternion(4.47035e-08, 1, -1.49012e-08, -1.49012e-08)
+bones/9/rotation = Quaternion(-4.21468e-08, 0.707107, 4.21468e-08, 0.707107)
+bones/10/rotation = Quaternion(3.20299e-14, -0.707107, -3.20299e-14, 0.707107)
+bones/11/rotation = Quaternion(0.060003, -0.540625, -0.455768, 0.704557)
+bones/12/rotation = Quaternion(-2.23517e-08, 0, -2.98023e-08, 1)
+bones/13/rotation = Quaternion(-1.49012e-08, 2.23517e-08, -2.98023e-08, 1)
+bones/15/rotation = Quaternion(0, 0, 5.96046e-08, 1)
+bones/16/rotation = Quaternion(-2.98023e-08, 2.98023e-08, -2.98023e-08, 1)
+bones/17/rotation = Quaternion(-2.98023e-08, -5.96046e-08, 1.49012e-08, 1)
+bones/19/rotation = Quaternion(-2.98023e-08, -2.98023e-08, 2.98023e-08, 1)
+bones/20/rotation = Quaternion(0, 0, -5.96046e-08, 1)
+bones/21/rotation = Quaternion(0, 0, 5.96046e-08, 1)
+bones/23/rotation = Quaternion(-2.98023e-08, -2.98023e-08, 2.98023e-08, 1)
+bones/25/rotation = Quaternion(0, -4.47035e-08, -4.47035e-08, 1)
+bones/27/rotation = Quaternion(-2.98023e-08, -2.98023e-08, 2.98023e-08, 1)
+bones/28/rotation = Quaternion(2.98023e-08, 2.98023e-08, -2.98023e-08, 1)
+bones/29/rotation = Quaternion(1.49012e-08, 1.49012e-08, -1.49012e-08, 1)
+bones/31/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
+bones/32/rotation = Quaternion(-2.98023e-08, 1, -2.98023e-08, 2.98023e-08)
+bones/33/rotation = Quaternion(4.21468e-08, -0.707107, 4.21468e-08, 0.707107)
+bones/34/rotation = Quaternion(2.82617e-14, 0.707107, 2.82617e-14, 0.707107)
+bones/35/rotation = Quaternion(0.060003, 0.540625, 0.455768, 0.704556)
+bones/36/rotation = Quaternion(1.49012e-08, -5.96046e-08, 5.96046e-08, 1)
+bones/37/rotation = Quaternion(1.49012e-08, -1.41561e-07, 0, 1)
+bones/39/rotation = Quaternion(0, 0, 5.96046e-08, 1)
+bones/40/rotation = Quaternion(1.49012e-08, 0, 0, 1)
+bones/41/rotation = Quaternion(2.98023e-08, 2.98023e-08, -2.98023e-08, 1)
+bones/43/rotation = Quaternion(0, 0, 5.96046e-08, 1)
+bones/45/rotation = Quaternion(1.49012e-08, -1.49012e-08, 0, 1)
+bones/47/rotation = Quaternion(0, 0, 5.96046e-08, 1)
+bones/48/rotation = Quaternion(-4.47035e-08, 5.96046e-08, 1.49012e-08, 1)
+bones/49/rotation = Quaternion(-4.47035e-08, 5.96046e-08, 1.49012e-08, 1)
+bones/51/rotation = Quaternion(-2.98023e-08, 2.98023e-08, 2.98023e-08, 1)
+bones/52/rotation = Quaternion(-2.98023e-08, -2.98023e-08, 8.9407e-08, 1)
+bones/53/rotation = Quaternion(2.98023e-08, 2.98023e-08, 2.98023e-08, 1)
+bones/55/rotation = Quaternion(3.60594e-17, -1.39698e-09, 1, 5.58309e-15)
+bones/56/rotation = Quaternion(0, 1, -4.88944e-09, -2.22045e-15)
+bones/57/rotation = Quaternion(-8.16448e-15, 0.707107, -0.707107, 3.20299e-14)
+bones/58/rotation = Quaternion(2.00972e-14, 1, 0, -4.01944e-14)
+bones/60/rotation = Quaternion(3.25414e-17, -4.65661e-10, 1, 5.0384e-15)
+bones/61/rotation = Quaternion(0, 1, 2.79397e-09, -7.77156e-16)
+bones/62/rotation = Quaternion(-9.42055e-15, 0.707107, -0.707107, -9.42055e-15)
+bones/63/rotation = Quaternion(3.01458e-14, 1, 2.98023e-08, 7.03401e-14)
+
+[node name="RandomAnimTrigger" type="Timer" parent="." index="2"]
+autostart = true
+
+[connection signal="timeout" from="RandomAnimTrigger" to="." method="_on_random_anim_trigger_timeout"]

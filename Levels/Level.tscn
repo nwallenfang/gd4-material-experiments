@@ -1,13 +1,15 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=24 format=3 uid="uid://ceptlqfo2p223"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_00dad"]
-[ext_resource type="Environment" uid="uid://te4oqnhb7yla" path="res://env.tres" id="2_83gyu"]
+[ext_resource type="Environment" uid="uid://benxub7y5ll02" path="res://env.tres" id="2_83gyu"]
 [ext_resource type="Material" uid="uid://d0mfyn1g86r04" path="res://Materials/CliffMatShader.tres" id="3_dldp1"]
-[ext_resource type="Material" path="res://Materials/dreckmaterial.tres" id="4_breqw"]
+[ext_resource type="Material" uid="uid://bxc6vixqeljry" path="res://Materials/dreckmaterial.tres" id="4_breqw"]
 [ext_resource type="Material" uid="uid://cbki4lr5giwhd" path="res://Materials/CliffMaterial.tres" id="4_oog3b"]
 [ext_resource type="Script" path="res://Objects/HSVCliff.gd" id="5_80dp7"]
-[ext_resource type="PackedScene" uid="uid://c4g2gtfrjlmtd" path="res://Actors/Player.tscn" id="6_hpl7r"]
+[ext_resource type="PackedScene" path="res://Actors/Player.tscn" id="6_hpl7r"]
 [ext_resource type="PackedScene" uid="uid://qkv5f4yxykmh" path="res://Objects/suzanne.tscn" id="7_2yvrt"]
+[ext_resource type="PackedScene" uid="uid://qq58p7u5vdkd" path="res://Actors/Humanoid.tscn" id="9_mgs4q"]
+[ext_resource type="PackedScene" uid="uid://ceiwdajd5uyw" path="res://Models/rig_nils.tscn" id="10_b57sx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e534a"]
 
@@ -142,7 +144,6 @@ light_color = Color(1, 0.933333, 0.862745, 1)
 light_angular_distance = 0.5
 shadow_enabled = true
 shadow_bias = 1.202
-shadow_blur = 3.936
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -225,3 +226,15 @@ transform = Transform3D(-0.599196, 0.26772, 0.754514, 0.0656276, 0.955685, -0.28
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60355, 2.13948, 0.891215)
 mesh = SubResource("BoxMesh_x3jrm")
+
+[node name="Shoved Reaction With Spin" parent="." instance=ExtResource("9_mgs4q")]
+transform = Transform3D(0.198456, 0, 2.99343, 0, 3, 0, -2.99343, 0, 0.198456, -30.0667, 0.501054, 12.4457)
+
+[node name="Shoved Reaction With Spin2" parent="." instance=ExtResource("9_mgs4q")]
+transform = Transform3D(0.740337, 0, 2.90721, 0, 3, 0, -2.90721, 0, 0.740337, -29.8135, 0.501054, 15.4499)
+
+[node name="Shoved Reaction With Spin3" parent="." instance=ExtResource("9_mgs4q")]
+transform = Transform3D(0.0377506, 0, 2.99976, 0, 3, 0, -2.99976, 0, 0.0377506, -29.7261, 0.501054, 18.1306)
+
+[node name="rig_nils" parent="." instance=ExtResource("10_b57sx")]
+transform = Transform3D(-0.102706, 0, 4.99895, 0, 5, 0, -4.99895, 0, -0.102706, -30.3565, 0, 21.1182)
